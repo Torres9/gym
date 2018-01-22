@@ -89,14 +89,14 @@ class FrictionDetector(contactListener):
         if not obj or "tiles" not in obj.__dict__: return
         if begin:
             obj.tiles.add(tile)
-            #print tile.road_friction, "ADD", len(obj.tiles)
+            #print(tile.road_friction, "ADD", len(obj.tiles))
             if not tile.road_visited:
                 tile.road_visited = True
                 self.env.reward += 1000.0/len(self.env.track)
                 self.env.tile_visited_count += 1
         else:
             obj.tiles.remove(tile)
-            #print tile.road_friction, "DEL", len(obj.tiles) -- should delete to zero when on grass (this works)
+            # print(tile.road_friction, "DEL", len(obj.tiles)) -- should delete to zero when on grass (this works)
 
 class CarRacing(gym.Env):
     metadata = {
@@ -147,7 +147,7 @@ class CarRacing(gym.Env):
                 rad = 1.5*TRACK_RAD
             checkpoints.append( (alpha, rad*math.cos(alpha), rad*math.sin(alpha)) )
 
-        #print "\n".join(str(h) for h in checkpoints)
+        #print("\n".join(str(h) for h in checkpoints))
         #self.road_poly = [ (    # uncomment this to see checkpoints
         #    [ (tx,ty) for a,tx,ty in checkpoints ],
         #    (0.7,0.7,0.9) ) ]
@@ -199,7 +199,7 @@ class CarRacing(gym.Env):
             if laps > 4: break
             no_freeze -= 1
             if no_freeze==0: break
-        #print "\n".join([str(t) for t in enumerate(track)])
+        #print("\n".join([str(t) for t in enumerate(track)]))
 
         # Find closed loop range i1..i2, first loop should be ignored, second is OK
         i1, i2 = -1, -1

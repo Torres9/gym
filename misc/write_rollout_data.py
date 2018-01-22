@@ -40,11 +40,11 @@ def main():
         sys.path.insert(0, args.gymdir)
     import gym
     from gym import utils
-    print utils.colorize("gym directory: %s"%path.dirname(gym.__file__), "yellow")
+    print(utils.colorize("gym directory: %s"%path.dirname(gym.__file__), "yellow"))
     env = gym.make(args.envid)
     agent = RandomAgent(env.action_space)
     alldata = {}
-    for i in xrange(2):
+    for i in range(2):
         np.random.seed(i)
         data = rollout(env, agent, env.spec.max_episode_steps)
         for (k, v) in data.items():

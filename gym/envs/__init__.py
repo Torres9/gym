@@ -294,7 +294,7 @@ register(
 # Atari
 # ----------------------------------------
 
-# # print ', '.join(["'{}'".format(name.split('.')[0]) for name in atari_py.list_games()])
+# # print(', '.join(["'{}'".format(name.split('.')[0]) for name in atari_py.list_games()]))
 for game in ['air_raid', 'alien', 'amidar', 'assault', 'asterix', 'asteroids', 'atlantis',
     'bank_heist', 'battle_zone', 'beam_rider', 'berzerk', 'bowling', 'boxing', 'breakout', 'carnival',
     'centipede', 'chopper_command', 'crazy_climber', 'demon_attack', 'double_dunk',
